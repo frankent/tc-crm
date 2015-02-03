@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ApiController' => $baseDir . '/app/controllers/ApiController.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Boris\\Boris' => $vendorDir . '/d11wtq/boris/lib/Boris/Boris.php',
     'Boris\\CLIOptionsHandler' => $vendorDir . '/d11wtq/boris/lib/Boris/CLIOptionsHandler.php',
@@ -28,6 +29,7 @@ return array(
     'ClassPreloader\\Parser\\DirVisitor' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/DirVisitor.php',
     'ClassPreloader\\Parser\\FileVisitor' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/FileVisitor.php',
     'ClassPreloader\\Parser\\NodeTraverser' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/NodeTraverser.php',
+    'CrmController' => $baseDir . '/app/controllers/CrmController.php',
     'Crypt_AES' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/AES.php',
     'Crypt_Base' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Base.php',
     'Crypt_Blowfish' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Blowfish.php',
@@ -1252,6 +1254,7 @@ return array(
     'Symfony\\Component\\HttpKernel\\CacheWarmer\\CacheWarmerInterface' => $vendorDir . '/symfony/http-kernel/Symfony/Component/HttpKernel/CacheWarmer/CacheWarmerInterface.php',
     'Symfony\\Component\\HttpKernel\\CacheWarmer\\WarmableInterface' => $vendorDir . '/symfony/http-kernel/Symfony/Component/HttpKernel/CacheWarmer/WarmableInterface.php',
     'Symfony\\Component\\HttpKernel\\Client' => $vendorDir . '/symfony/http-kernel/Symfony/Component/HttpKernel/Client.php',
+    'Symfony\\Component\\HttpKernel\\Config\\EnvParametersResource' => $vendorDir . '/symfony/http-kernel/Symfony/Component/HttpKernel/Config/EnvParametersResource.php',
     'Symfony\\Component\\HttpKernel\\Config\\FileLocator' => $vendorDir . '/symfony/http-kernel/Symfony/Component/HttpKernel/Config/FileLocator.php',
     'Symfony\\Component\\HttpKernel\\Controller\\ControllerReference' => $vendorDir . '/symfony/http-kernel/Symfony/Component/HttpKernel/Controller/ControllerReference.php',
     'Symfony\\Component\\HttpKernel\\Controller\\ControllerResolver' => $vendorDir . '/symfony/http-kernel/Symfony/Component/HttpKernel/Controller/ControllerResolver.php',
