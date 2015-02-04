@@ -39,4 +39,15 @@ class ApiController extends BaseController {
         print_r($session);
     }
 
+    public function postCreateclient() {
+        $data = Input::all();
+        $flag = DB::table('client')->insert($data);
+        $resp['status'] = 'fail';
+        if ($flag) {
+            $resp['status'] = 'success';
+            $resp['url'] = url('crm/client');
+        }
+        echo json_encode($resp);
+    }
+
 }

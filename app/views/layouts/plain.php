@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,10 +13,10 @@
         <link rel="stylesheet" href="<?php echo asset("packages/css/tc-css.css"); ?>">
 
         <!--Js-->
-        <script src="<?php echo  asset("packages/js/jquery.min.js"); ?>"></script>
-        <script src="<?php echo  asset("packages/js/bootstrap.min.js"); ?>"></script>
-        <script src="<?php echo  asset("packages/js/jquery.form.js"); ?>"></script>
-        <script src="<?php echo  asset("packages/js/sweet-alert.min.js"); ?>"></script>
+        <script src="<?php echo asset("packages/js/jquery.min.js"); ?>"></script>
+        <script src="<?php echo asset("packages/js/bootstrap.min.js"); ?>"></script>
+        <script src="<?php echo asset("packages/js/jquery.form.js"); ?>"></script>
+        <script src="<?php echo asset("packages/js/sweet-alert.min.js"); ?>"></script>
 
         <style type="text/css">
             /*Responsive disabled*/

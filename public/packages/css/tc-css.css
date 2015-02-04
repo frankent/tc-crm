@@ -15,3 +15,19 @@ and open the template in the editor.
 .txt_center{
     text-align: center;
 }
+
+.content_area{
+    padding-top: 30px;
+}
+
+.bg-white{
+    background-color: #fff;
+}
+
+.bg-grey{
+    background-color: #efefef;
+}
+
+.table_future{
+    background-color: #ccffcc;
+}
