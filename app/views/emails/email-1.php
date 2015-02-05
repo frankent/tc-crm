@@ -28,6 +28,12 @@
                         <p style='text-indent: 30px;'>ซึ่งทั้งนี้ทางบริษัท นอร์ทเทรินวินด์ ดิจิตอล โซลูชั่น จำกัด ได้แนบข้อมูลเพื่อการยืนยัน หรือตรวจสอบวันครบกำหนดการต่ออายุเว็บไซต์ และระบบเซิฟเวอร์บริการข้อมุลของท่าน มาตามข้อมูลด้านล่างนี้</p>
 
                         <h4 style='text-align: center; background-color: #f5873a; margin: 0px; padding: 20px; color: #000; text-shadow: 1px 1px 2px #fff;'><?php echo date('j', $client->create_date) . " " . $month[date('n', $client->create_date)]; ?> ของทุกปี</h4>
+
+                        <p>ถ้าข้อมูลข้างต้นถูกต้องกรุณากดลิ้งเพื่อยืนยันข้อมูล</p>
+                        <p><a href='<?php echo url("api/feedback/1/{$client->client_id}/1"); ?>'>ข้อมูลถูกต้อง</a> (ถ้าข้อมูลถูกต้องทางบริษัทจะกำหนด วันที่ <?php echo date('j', $client->create_date) . " " . $month[date('n', $client->create_date)]; ?> ของทุกปี เป็นวันครบกำหนดชำระค่าบริการ)</p>
+                        <p>หรือถ้าข้อมูลไม่ถูกต้องกรุณากดลิ้งด้านล่าง</p>
+                        <p><a href='<?php echo url("api/feedback/1/{$client->client_id}/0"); ?>'>ข้อมูลไม่ถูกต้อง</a> (รอการติดต่อกลับจากทางบริษัท)</p>
+
                         <br/>
                         <div style='text-align: right;'>
                             <div style='text-align: center; display: inline-block; margin-right: 20px;'>
@@ -36,10 +42,7 @@
                                 <p style='margin: 0px;'>กรรมการผู้จัดการบริษัท</p>
                             </div>
                         </div>
-                        <p>ถ้าข้อมูลข้างต้นถูกต้องกรุณากดลิ้งเพื่อยืนยันข้อมูล</p>
-                        <p><a href='<?php echo url("api/feedback/1/{$client->client_id}/1"); ?>'>ข้อมูลถูกต้อง</a> (ถ้าข้อมูลถูกต้องทางบริษัทจะกำหนด วันที่ <?php echo date('j', $client->create_date) . " " . $month[date('n', $client->create_date)]; ?> ของทุกปี เป็นวันครบกำหนดชำระค่าบริการ)</p>
-                        <p>หรือถ้าข้อมูลไม่ถูกต้องกรุณากดลิ้งด้านล่าง</p>
-                        <p><a href='<?php echo url("api/feedback/1/{$client->client_id}/0"); ?>'>ข้อมูลไม่ถูกต้อง</a></p>
+
                         <p style="text-align: center; font-size: 12px;">DO NOT Reply this email, Please contact us via `northernwind.digital@gmail.com`</p>
                     </div>
                 </td>
