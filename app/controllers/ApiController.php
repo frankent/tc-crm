@@ -50,4 +50,14 @@ class ApiController extends BaseController {
         echo json_encode($resp);
     }
 
+    public function postUpdateclient($client_id) {
+        $data = Input::all();
+        $flag = DB::table('client')->where('client_id', $client_id)->update($data);
+        if ($flag) {
+            $resp['status'] = 'success';
+            $resp['url'] = url('crm/client');
+        }
+        echo json_encode($resp);
+    }
+
 }

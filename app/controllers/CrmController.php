@@ -43,7 +43,30 @@ class CrmController extends BaseController {
     }
 
     public function getClientinfo($client_id) {
-        return $client_id;
+        $data['client'] = DB::table('client')->where('client_id', $client_id)->get();
+        $data['client'] = $data['client'][0];
+        $this->layout->content = View::make('crm.clientinfo', $data);
+    }
+
+    public function getEmail($email_id) {
+        $data['email_package'] = DB::table('email')->where('email_id', $email_id)->get();
+        $data['email_package'] = $data['email_package'][0];
+        $data['email_id'] = $email_id;
+        $data['client'] = DB::table('client')->orderBy('create_date', 'asc')->get();
+        $client_feedback = DB::table('email_feedback')->where('email_id', $email_id)->get();
+        $new_client_obj = array();
+        foreach ($client_feedback as $each_client) {
+            $new_client_obj[$each_client->client_id] = $each_client;
+        }
+        $data['client_feedback'] = $new_client_obj;
+        $this->layout->content = View::make('crm.emailinfo', $data);
+    }
+    
+    public function getTestmail(){
+        Mail::send('emails.tcmail', array('key' => 'value'), function($message) {
+            $message->to('frankent@gmail.com', 'Frank1')->subject('Welcome!');
+        });
+        return 5;
     }
 
 }

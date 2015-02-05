@@ -43,7 +43,16 @@
                     <ul class="nav navbar-nav  navbar-right">
                         <li><a href="<?php echo url('crm/dashboard'); ?>">Dashboard</a></li>
                         <li><a href="<?php echo url('crm/client'); ?>">Client</a></li>
-                        <li><a href="<?php echo url('api/logout'); ?>">Log out</a></li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Email <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <?php $all_email = DB::table('email')->get(); ?>
+                                <?php foreach ($all_email as $each_email): ?>
+                                    <li><a href="<?php echo url("crm/email/{$each_email->email_id}"); ?>"><?php echo $each_email->email_name ?></a></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
+                        <li><a href="<?php echo url('api/logout'); ?>">Logout</a></li>
                     </ul>
                 </div>
             </div>
