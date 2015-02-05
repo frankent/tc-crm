@@ -63,7 +63,7 @@ class CrmController extends BaseController {
     }
     
     public function getTestmail(){
-        Mail::send('emails.tcmail', array('key' => 'value'), function($message) {
+        Mail::send('emails.tcmail', array('content' => 'value'), function($message) {
             $message->to('frankent@gmail.com', 'Frank1')->subject('Welcome!');
         });
         return 5;
