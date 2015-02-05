@@ -37,12 +37,9 @@
                             </div>
                         </div>
                         <p>ถ้าข้อมูลข้างต้นถูกต้องกรุณากดลิ้งเพื่อยืนยันข้อมูล</p>
-                        <p><a href='<?php echo url("api/feedback/1/{$client->client_id}/วันถูกต้อง"); ?>'>ยืนยันความถูกต้องของข้อมูล</a> (ถ้าข้อมูลถูกต้องทางบริษัทจะกำหนด วันที่ <?php echo date('j', $client->create_date) . " " . $month[date('n', $client->create_date)]; ?> ของทุกปี เป็นวันครบกำหนดชำระค่าบริการ)</p>
-                        <p>หรือถ้าข้อมูลไม่ถูกต้องกรุณาระบุข้อความด้านล่างนี้</p>
-                        <form action='<?php echo url("api/pfeedback/1/{$client->client_id}"); ?>' method='post'>
-                            <p><textarea rows="5" name='feedback' style='width: 250px;' placeholder="โปรดระบุข้อมูลที่ถูกต้อง"></textarea></p>
-                            <p><button type='submit'>ส่งข้อมูล</button></p>
-                        </form>
+                        <p><a href='<?php echo url("api/feedback/1/{$client->client_id}/1"); ?>'>ข้อมูลถูกต้อง</a> (ถ้าข้อมูลถูกต้องทางบริษัทจะกำหนด วันที่ <?php echo date('j', $client->create_date) . " " . $month[date('n', $client->create_date)]; ?> ของทุกปี เป็นวันครบกำหนดชำระค่าบริการ)</p>
+                        <p>หรือถ้าข้อมูลไม่ถูกต้องกรุณากดลิ้งด้านล่าง</p>
+                        <p><a href='<?php echo url("api/feedback/1/{$client->client_id}/0"); ?>'>ข้อมูลไม่ถูกต้อง</a></p>
                         <p style="text-align: center; font-size: 12px;">DO NOT Reply this email, Please contact us via `northernwind.digital@gmail.com`</p>
                     </div>
                 </td>
