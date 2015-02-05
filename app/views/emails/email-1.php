@@ -39,7 +39,7 @@
                         <p>ถ้าข้อมูลข้างต้นถูกต้องกรุณากดลิ้งเพื่อยืนยันข้อมูล</p>
                         <p><a href='<?php echo url("api/api/feedback/1/{$client->client_id}/วันถูกต้อง"); ?>'>ยืนยันความถูกต้องของข้อมูล</a> (ถ้าข้อมูลถูกต้องทางบริษัทจะกำหนด วันที่ <?php echo date('j', $client->create_date) . " " . $month[date('n', $client->create_date)]; ?> ของทุกปี เป็นวันครบกำหนดชำระค่าบริการ)</p>
                         <p>หรือถ้าข้อมูลไม่ถูกต้องกรุณาระบุข้อความด้านล่างนี้</p>
-                        <form action='<?php echo url("api/api/pfeedback/1/{$client->client_id}"); ?>'>
+                        <form action='<?php echo url("api/api/pfeedback/1/{$client->client_id}"); ?>' method='post'>
                             <p><textarea rows="5" name='feedback' style='width: 250px;' placeholder="โปรดระบุข้อมูลที่ถูกต้อง"></textarea></p>
                             <p><button type='submit'>ส่งข้อมูล</button></p>
                         </form>
