@@ -61,12 +61,30 @@ class CrmController extends BaseController {
         $data['client_feedback'] = $new_client_obj;
         $this->layout->content = View::make('crm.emailinfo', $data);
     }
-    
-    public function getTestmail(){
-        Mail::send('emails.tcmail', array('content' => 'value'), function($message) {
-            $message->to('frankent@gmail.com', 'Frank1')->subject('Welcome!');
+
+//    public function getTestmail() {
+//        Mail::send('emails.tcmail', array('content' => 'value'), function($message) {
+//            $message->to('frankent@gmail.com', 'Frank1')->subject('Welcome!');
+//        });
+//        return 5;
+//    }
+
+    public function getTestmail($client_id) {
+        $client = DB::table('client')->where('client_id', $client_id)->get();
+        $data['client'] = $client[0];
+        Mail::send('emails.email-1', $data, function($message) {
+            $message->to('frankent@gmail.com', 'Frank1')->subject("เรียน {$client[0]->client_name} เรื่อง แจ้งการดูแลระบบเว็บไซต์และงานออกแบบ");
         });
-        return 5;
+        return View::make('emails.email-1', $data);
+    }
+
+    public function getRunmail($email_id) {
+        switch ($email_id) {
+            case 1:
+//                Start text
+//                End text
+                break;
+        }
     }
 
 }

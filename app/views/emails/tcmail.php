@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
     </head>
     <body style="font-family: arial,sans-serif;">
-        <table style="border: 1px solid #efefef; border-radius: 4px; box-shadow: 1px 1px 2px #222;" width="650px;">
+        <table style="border: 1px solid #efefef; border-radius: 4px; box-shadow: 1px 1px 2px #222;" width="100%">
             <tr>
                 <td width="120px;">
                     <img src="<?php echo asset("img/logo_mail.jpg") ?>" style="max-width: 100%;">
