@@ -34,7 +34,7 @@ Route::get('feedback/{email_id}/{client_id}/{resp}', function($email_id, $client
     } else {
         //Don't feedback yet
         $unix = time();
-        DB::table('email_feedback')->insert(['email_id' => $email_id, 'client_id' => $client_id, 'feedback' => $resp, 'create_date' => $unix]);
+        DB::table('email_feedback')->insert(array('email_id' => $email_id, 'client_id' => $client_id, 'feedback' => $resp, 'create_date' => $unix));
         return Redirect::to('landing/feedback/success');
     }
 });
