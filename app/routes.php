@@ -26,6 +26,22 @@ Route::filter('postAuth', function() {
 });
 
 
+Route::get('feedback/{email_id}/{client_id}/{resp}', function($email_id, $client_id, $resp) {
+    $user_feedback = DB::table('email_feedback')->where('client_id', $client_id)->where('email_id', $email_id)->count();
+    if ($user_feedback) {
+        //Already feedback
+        return Redirect::to('landing/feedback/duplicate');
+    } else {
+        //Don't feedback yet
+        $unix = time();
+        DB::table('email_feedback')->insert(['email_id' => $email_id, 'client_id' => $client_id, 'feedback' => $resp, 'create_date' => $unix]);
+        return Redirect::to('landing/feedback/success');
+    }
+});
+
+Route::get('landing/feedback/{status}', 'HomeController@showLandingpage');
+
+
 //Route::get('/', array("before" => 'preAuth', 'uses' => "HomeController@showLogin"));
 Route::controller('api', 'ApiController');
 

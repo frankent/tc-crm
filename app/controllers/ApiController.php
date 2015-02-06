@@ -60,5 +60,4 @@ class ApiController extends BaseController {
         echo json_encode($resp);
     }
 
-
 }
