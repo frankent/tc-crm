@@ -75,7 +75,7 @@ class CrmController extends BaseController {
         foreach ($all_client as $client) {
             $data['client'] = $client;
             Mail::send('emails.email-1', $data, function($message) use($client) {
-                $message->to("keittirat@trycatch.in.th", "Keittirat Satjaphong")->subject("เรียน {$client->client_name} เรื่อง แจ้งการดูแลระบบเว็บไซต์และงานออกแบบ");
+                $message->to("keittirat@gmail.com", "Keittirat Satjaphong")->subject("เรียน {$client->client_name} เรื่อง แจ้งการดูแลระบบเว็บไซต์และงานออกแบบ");
 //                $message->to($client->client_email, $client->client_name)->subject("เรียน {$client->client_name} เรื่อง แจ้งการดูแลระบบเว็บไซต์และงานออกแบบ");
             });
         }
