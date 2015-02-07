@@ -28,7 +28,7 @@
                             <td><?php echo $i + 1; ?></td>
                             <td><a href="<?php echo url("crm/clientinfo/{$each_client->client_id}"); ?>" target="_blank"><?php echo $each_client->client_site ?></a></td>
                             <td><?php echo $each_client->client_email ?></td>
-                            <td><button class="btn btn-xs <?php echo array_key_exists($each_client->client_id, $client_feedback) ? "btn-success" : "btn-default"; ?>"><i class="glyphicon glyphicon-share-alt"></i>&nbsp;feedback</button></td>
+                            <td><button class="btn btn-xs <?php echo array_key_exists($each_client->client_id, $client_feedback) ? ($client_feedback[$each_client->client_id]->feedback == 1 ? "btn-success" : "btn-danger") : "btn-default"; ?>"><i class="glyphicon glyphicon-share-alt"></i>&nbsp;feedback</button></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

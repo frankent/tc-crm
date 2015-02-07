@@ -26,7 +26,7 @@ Route::filter('postAuth', function() {
 });
 
 
-Route::get('feedback/{email_id}/{client_id}/{resp}', function($email_id, $client_id, $resp) {
+Route::get('feedback/{email_id}/{client_id}/{resp}/{resptxt}', function($email_id, $client_id, $resp, $resptxt) {
     $user_feedback = DB::table('email_feedback')->where('client_id', $client_id)->where('email_id', $email_id)->count();
     if ($user_feedback) {
         //Already feedback
@@ -34,7 +34,7 @@ Route::get('feedback/{email_id}/{client_id}/{resp}', function($email_id, $client
     } else {
         //Don't feedback yet
         $unix = time();
-        DB::table('email_feedback')->insert(array('email_id' => $email_id, 'client_id' => $client_id, 'feedback' => $resp, 'create_date' => $unix));
+        DB::table('email_feedback')->insert(array('email_id' => $email_id, 'client_id' => $client_id, 'feedback' => $resp, 'feedback_txt' => $resptxt, 'create_date' => $unix));
         return Redirect::to('landing/feedback/success');
     }
 });
