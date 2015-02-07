@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'trycatch.service@gmail.com', 'name' => 'TryCatch-Mailer'),
+	'from' => array('address' => 'trycatch.service@gmail.com', 'name' => 'Northernwind Digital Solution Co.,Ltd.'),
 
 	/*
 	|--------------------------------------------------------------------------
