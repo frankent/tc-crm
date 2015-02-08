@@ -38,6 +38,7 @@
                         <th>Expire</th>
                         <th>Whois</th>
                         <th>Note</th>
+                        <th>List</th>
                         <th>View</th>
                     </tr>
                 </thead>
@@ -50,6 +51,7 @@
                             <td><?php echo date('d/m/Y', $expire); ?></td>
                             <td><a href="<?php echo "http://who.is/whois/{$each_client->client_site}" ?>" target="_blank" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-eye-open"></i>&nbsp;whois</a></td>
                             <td><button class="btn btn-xs <?php echo $each_client->client_note ? "btn-info" : "btn-default"; ?>" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="<?php echo $each_client->client_note ? $each_client->client_note : "ไม่มีโน๊ต"; ?>"><i class="glyphicon glyphicon-search"></i>&nbsp;view</button></td>
+                            <td><a href="<?php echo url("crm/list/{$each_client->client_id}") ?>" target="_blank" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-list"></i>&nbsp;list</a></td>
                             <td><a href="<?php echo url("crm/clientinfo/{$each_client->client_id}") ?>" target="_blank" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-share"></i>&nbsp;detail</a></td>
                         </tr>
                     <?php endforeach; ?>

@@ -6,6 +6,8 @@
                     <ul class="nav nav-pills nav-stacked">
                         <li><a href="<?php echo url("crm/client"); ?>">All Client</a></li>
                         <li><a href="<?php echo url("crm/createclient"); ?>">Create Client</a></li>
+                        <li class="active"><a href="<?php echo url("crm/clientinfo/{$client->client_id}") ?>">Profile</a></li>
+                        <li><a href="<?php echo url("crm/list/{$client->client_id}") ?>">List</a></li>
                     </ul>
                 </div>
             </div>
@@ -73,7 +75,7 @@
                     <input type="hidden" name="create_date" class="form-control" id="create_date_hide" value="<?php echo $client->create_date; ?>">
                 </form>
             </div>
-            
+
         </div>
     </div>
 </div>

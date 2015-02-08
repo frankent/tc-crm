@@ -69,17 +69,26 @@ class CrmController extends BaseController {
 //        return 5;
 //    }
 
-    public function getTestmail() {
-        $all_client = DB::table('client')->get();
+    /*    public function getTestmail() {
+      $all_client = DB::table('client')->get();
 
-        foreach ($all_client as $client) {
-            $data['client'] = $client;
-            Mail::send('emails.email-1', $data, function($message) use($client) {
-//                $message->to("keittirat@gmail.com", "Keittirat Satjaphong")->subject("เรียน {$client->client_name} เรื่อง แจ้งการดูแลระบบเว็บไซต์และงานออกแบบ");
-                $message->to($client->client_email, $client->client_name)->bcc("keittirat@gmail.com","Keittirat Satjaphong")->subject("เรียน {$client->client_name} เรื่อง แจ้งการดูแลระบบเว็บไซต์และงานออกแบบ");
-            });
-        }
-        return "finish";
+      foreach ($all_client as $client) {
+      $data['client'] = $client;
+      Mail::send('emails.email-1', $data, function($message) use($client) {
+      //                $message->to("keittirat@gmail.com", "Keittirat Satjaphong")->subject("เรียน {$client->client_name} เรื่อง แจ้งการดูแลระบบเว็บไซต์และงานออกแบบ");
+      $message->to($client->client_email, $client->client_name)->bcc("keittirat@gmail.com","Keittirat Satjaphong")->subject("เรียน {$client->client_name} เรื่อง แจ้งการดูแลระบบเว็บไซต์และงานออกแบบ");
+      });
+      }
+      return "finish";
+      } */
+
+    public function getList($client_id) {
+        $this->layout->title = "รายการคิดเงินลูกค้า";
+        $data['client'] = DB::table('client')->where('client_id', $client_id)->get();
+        $data['client'] = $data['client'][0];
+        
+        $data['product'] = DB::table('client_product')->where('client_id', $client_id)->get();
+        $this->layout->content = View::make('crm.list', $data);
     }
 
     public function getRunmail($email_id) {
